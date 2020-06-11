@@ -18,7 +18,7 @@ namespace LessonTask02
             myClass = new MyClass("Hallo", "World", 12, 34);
             Console.WriteLine("#### До сериализации ####");
             myClass.GetFields();
-            Console.WriteLine(new string('-',50));
+            Console.WriteLine(new string('-', 50));
 
             FileStream fs = new FileStream("Task02.dat", FileMode.OpenOrCreate, FileAccess.Write, FileShare.Read);
             BinaryFormatter bf = new BinaryFormatter();
@@ -38,8 +38,10 @@ namespace LessonTask02
     [Serializable]
     public class MyClass
     {
+        [NonSerialized]
         private string strField1;
         private string strField2;
+        [NonSerialized]
         private int intField3;
         private int intField4;
 
